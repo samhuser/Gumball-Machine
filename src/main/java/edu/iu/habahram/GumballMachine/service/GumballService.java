@@ -39,6 +39,9 @@ public class GumballService implements IGumballService{
             case TURN_CRANK -> {
                 return machine.turnCrank();
             }
+            case REFILL -> {
+                return machine.refill(10);
+            }
         }
         return null;
     }
@@ -63,6 +66,16 @@ public class GumballService implements IGumballService{
     @Override
     public List<GumballMachineRecord> findAll() throws IOException {
         return gumballRepository.findAll();
+    }
+
+    @Override
+    public TransitionResult dispense(String id) throws IOException {
+        return null;
+    }
+
+    @Override
+    public TransitionResult refill(String id, int count) throws IOException {
+        return null;
     }
 
     @Override

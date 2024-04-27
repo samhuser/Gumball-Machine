@@ -13,6 +13,10 @@ public interface IGumballService {
     
     List<GumballMachineRecord> findAll() throws IOException;
 
+    TransitionResult dispense(String id) throws IOException;
+
+    TransitionResult refill(String id,int count) throws IOException;
+
     GumballMachineRecord findById(String id) throws IOException;
 
     String save(GumballMachineRecord gumballMachineRecord) throws IOException;
